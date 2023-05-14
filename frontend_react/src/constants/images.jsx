@@ -35,7 +35,14 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
+import dotnet from '../assets/dotnet.png';
+import csharp from '../assets/csharp.png';
+import java from '../assets/java.png'
+
 export default {
+  java,
+  dotnet,
+  csharp,
   email,
   mobile,
   api,

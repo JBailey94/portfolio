@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Tooltip as ReactTooltip } from 'react-tooltip';
+import { Tooltip  } from 'react-tooltip';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
+import 'react-tooltip/dist/react-tooltip.css';
 import './Skills.scss';
 
 const Skills = () => {
@@ -47,7 +48,7 @@ const Skills = () => {
           ))}
         </motion.div>
         <div className="app__skills-exp">
-          {experiences.map((experience) => (
+          {experiences.sort((a, b) => b.year - a.year).map((experience) => (
             <motion.div
               className="app__skills-exp-item"
               key={experience.year}
@@ -62,20 +63,20 @@ const Skills = () => {
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
-                      data-tip
-                      data-for={work.name}
+                      data-tooltip-id={work.name}
+                      data-tooltip-content={work.desc}
+                      data-tooltip-place="top"
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-                    <ReactTooltip
+                    <Tooltip
                       id={work.name}
-                      effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
                     >
                       {work.desc}
-                    </ReactTooltip>
+                    </Tooltip>
                   </React.Fragment>
                 ))}
               </motion.div>
