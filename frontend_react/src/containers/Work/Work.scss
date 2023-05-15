@@ -48,7 +48,7 @@
     align-items: flex-start;
   
     .app__work-item {
-      width: 400px;
+      max-width: 400px;
       height: auto;
       flex-direction: column;
   
@@ -66,13 +66,13 @@
       }
   
       @media screen and (min-width: 2000px) {
-        width: 470px;
+        max-width: 20%;
         padding: 1.25rem;
         border-radius: 0.75rem;
       }
   
-      @media screen and (max-width: 300px) {
-        width: 100%;
+      @media screen and (max-width: 400px) {
+        width: 90%;
         margin: 1rem;
       }
     }
