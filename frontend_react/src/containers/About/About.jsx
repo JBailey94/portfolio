@@ -19,11 +19,11 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        <span> Continuous learner </span> who loves <span>crafting software</span>
+         <span>Aspiring </span> developer with a passion for <span> learning </span> and <span> crafting </span>software
         <br />
       </h2>
 
-      <div className="app__profles">
+      <div className="app__profiles">
         {abouts.map((about, index) => (
           <motion.div
             whileInvView={{ opacity: 1 }}
